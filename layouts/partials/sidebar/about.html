@@ -24,7 +24,7 @@
       <img src="https://www.gravatar.com/avatar/{{md5 .}}?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
     </div>
   {{ end }}
-  <p class="site__description">
+  <div class="site__description">
     {{ .Site.Params.description | markdownify }}
-  </p>
+  </div>
 </div>
