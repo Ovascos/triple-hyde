@@ -1,6 +1,11 @@
 {{ partial "header/styles-highlight.html" . }}
 
-{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $vars := dict
+    "menu-open" ("img/menu-open.svg" | absURL)
+    "menu-close" ("img/menu-close.svg" | absURL)
+}}
+
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true "vars" $vars) }}
 
 {{ $style := resources.Get "scss/triple-hyde.scss" | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
